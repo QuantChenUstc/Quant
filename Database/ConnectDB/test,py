@@ -1,0 +1,9 @@
+from MySQLPool import UsingMysql
+
+def check_it():
+    with UsingMysql(logTime=True) as um:
+        sql = "select count(*) from day"
+        print("-- 当前数量：%d " % um.get_count(sql, None, 'code'))
+
+if __name__ == '__main__':
+    check_it()
