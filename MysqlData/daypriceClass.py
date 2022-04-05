@@ -28,10 +28,10 @@ class Dayprice:
     ma60 = 0.0
     ma180 = 0.0
     '''
-    def __init__(self, date, code):
-        self.date = date
+    def __init__(self, code, date):
         self.code = code
-
+        self.date = date
+        
     def set_param(self, displayName, abridgeName, openPrice, closePrice, highPrice, lowPrice, prePrice, volume, money, changeRatio, changePrice, highLimit, lowLimit, paused, isST, volumeRatio):
         self.displayName = displayName
         self.abridgeName = abridgeName
