@@ -1,7 +1,8 @@
 from tkinter import SEL_LAST
 
 
-class dayprice:
+class Dayprice:
+    '''
     date = ""
     code = ""
     displayName = ""
@@ -26,12 +27,12 @@ class dayprice:
     ma30 = 0.0
     ma60 = 0.0
     ma180 = 0.0
-
+    '''
     def __init__(self, date, code):
         self.date = date
         self.code = code
 
-    def set_param(self, displayName, abridgeName, openPrice, closePrice, highPrice, lowPrice, prePrice, volume, money, changeRatio, changePrice, highLimit, lowLimit, paused, isST, volumeRatio, ma5, ma10, ma20, ma30, ma60, ma180):
+    def set_param(self, displayName, abridgeName, openPrice, closePrice, highPrice, lowPrice, prePrice, volume, money, changeRatio, changePrice, highLimit, lowLimit, paused, isST, volumeRatio):
         self.displayName = displayName
         self.abridgeName = abridgeName
         self.openPrice = openPrice
@@ -48,9 +49,13 @@ class dayprice:
         self.paused = paused
         self.isST = isST
         self.volumeRatio = volumeRatio
+        
+    def set_ma(self, ma5, ma10, ma20, ma30, ma60, ma180):
         self.ma5 = ma5
         self.ma10 = ma10
         self.ma20 = ma20
         self.ma30 = ma30
         self.ma60 = ma60
         self.ma180 = ma180
+    
+    
