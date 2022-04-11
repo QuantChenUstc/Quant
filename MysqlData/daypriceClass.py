@@ -28,13 +28,14 @@ class Dayprice:
     ma60 = 0.0
     ma180 = 0.0
     '''
-    def __init__(self, code, date):
+    def __init__(self, code : str, displayName : str, abridgeName : str):
         self.code = code
-        self.date = date
-        
-    def set_param(self, displayName, abridgeName, openPrice, closePrice, highPrice, lowPrice, prePrice, volume, money, changeRatio, changePrice, highLimit, lowLimit, paused, isST, volumeRatio):
         self.displayName = displayName
         self.abridgeName = abridgeName
+        
+        
+    def set_param(self, date, openPrice, closePrice, highPrice, lowPrice, prePrice, volume, money, highLimit, lowLimit, paused):
+        self.date = date
         self.openPrice = openPrice
         self.closePrice = closePrice
         self.highPrice = highPrice
@@ -42,14 +43,20 @@ class Dayprice:
         self.prePrice = prePrice
         self.volume = volume
         self.money = money
-        self.changeRatio = changeRatio
-        self.changePrice = changePrice
         self.highLimit = highLimit
         self.lowLimit = lowLimit
         self.paused = paused
-        self.isST = isST
-        self.volumeRatio = volumeRatio
         
+    def set_change(self, changeRatio, changePrice):
+        self.changeRatio = changeRatio
+        self.changePrice = changePrice
+    
+    def set_volumeRatio(self, volumeRatio):
+        self.volumeRatio = volumeRatio
+
+    def set_isST(self, isST):
+        self.isST = isST
+ 
     def set_ma(self, ma5, ma10, ma20, ma30, ma60, ma180):
         self.ma5 = ma5
         self.ma10 = ma10
@@ -57,5 +64,8 @@ class Dayprice:
         self.ma30 = ma30
         self.ma60 = ma60
         self.ma180 = ma180
+    
+    def show(self):
+        print(self.code + " " + self.displayName + " " + self.abridgeName)
     
     
