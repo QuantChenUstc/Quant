@@ -8,13 +8,17 @@ from MysqlData.daypriceClass import Dayprice
 
 auth('15656086889', '@ABC@abc123')
 
+## pull stock from jq
 csvFile = __file__[:-7] + 'stocks.csv'
-# insertStock(csvFile)
-stocks = getStock(csvFile)
+# insert_stock_to_csv(csvFile)
+stocksClass, stocks, displayName, abridgeName = get_stock(csvFile)
+
+numStockAttributes = len(indexDict)
 
 fields = ['open','close','low','high','volume','money','factor','high_limit','low_limit','avg','pre_close','paused']
+print("start to get price")
 
+startDate = '2015-01-30'
 
-
-
+stockAttributes = generate_stock_Attribute(numStockAttributes-7, stocks, displayName, abridgeName, startDate, fields)
 
